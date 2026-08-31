@@ -12,11 +12,11 @@ A little hobby project aimed at challenging my Unity and C# skills. Though it pr
 - 4 block prefabs (grass, dirt, stone and snow)
 - Simple UI with crosshair and toolbar
 - Main menu with loading to Test Scene
+- Block placement
+- Block destruction
 
 ## Planned Features
 
-- Block placement
-- Block destruction
 - World generation (noise-based heights)
 - Chunk saving and loading
 - Snow blocks on hills
@@ -28,8 +28,6 @@ A little hobby project aimed at challenging my Unity and C# skills. Though it pr
 - Finding a cheap way to render all the blocks
 
 ## How It Looks
-
-![Block interaction](Docs/Game_3.mp4)
 
 ![Falling into the void...](Docs/Game_2.png)
 
