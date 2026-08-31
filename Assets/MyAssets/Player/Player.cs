@@ -13,11 +13,13 @@ public class Player : MonoBehaviour
 
     [Header("Camera Settings")]
     [SerializeField] private Transform cameraTransform;
-    [SerializeField] private float mouseSensitivity = 1f;
+    [SerializeField] private float mouseSensitivity = 0.25f;
 
 
     [Header("Building Settings")]
+    [SerializeField] private GameObject block_prefab;
     [SerializeField] private List<ToolbarItem> toolbarItems;
+    [SerializeField] private float blockInteractionRange = 5f;
     private BlockSO selectedBlock = null;
 
 
@@ -29,6 +31,8 @@ public class Player : MonoBehaviour
     private InputAction toolbar2Action;
     private InputAction toolbar3Action;
     private InputAction toolbar4Action;
+    private InputAction lmbAction;
+    private InputAction rmbAction;
 
     // Input variables
     private Vector2 moveVector = Vector2.zero;
@@ -49,6 +53,8 @@ public class Player : MonoBehaviour
         toolbar2Action = InputSystem.actions.FindAction("ToolbarSelection_2");
         toolbar3Action = InputSystem.actions.FindAction("ToolbarSelection_3");
         toolbar4Action = InputSystem.actions.FindAction("ToolbarSelection_4");
+        lmbAction = InputSystem.actions.FindAction("LMB");
+        rmbAction = InputSystem.actions.FindAction("RMB");
 
         rb = GetComponent<Rigidbody>();
 
@@ -77,6 +83,20 @@ public class Player : MonoBehaviour
             SelectToolbarItem(2);
         else if (toolbar4Action.ReadValue<float>() > 0.1f)
             SelectToolbarItem(3);
+
+        // Block interactions
+        Block pointedBlock = PointedBlock(out Vector3 direction);
+        if (pointedBlock != null)
+        {
+            if (lmbAction.WasPressedThisFrame()) // LMB was pressed
+            {
+                DestroyBlock(pointedBlock);
+            }
+            else if (rmbAction.WasPressedThisFrame()) // RMB was pressed
+            {
+                PlaceBlock(pointedBlock.Position + direction);
+            }
+        }
     }
     private void FixedUpdate()
     {
@@ -144,5 +164,32 @@ public class Player : MonoBehaviour
 
         // Highlight selected item in toolbar
         toolbarItems.ForEach(item => item.SetHighlight(item == toolbarItems[index]));
+    }
+
+
+
+    // ----- WORLD INTERACTIONS -----
+    private Block PointedBlock(out Vector3 direction)
+    {
+        Block block = null;
+        direction = Vector3.zero;
+
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, blockInteractionRange) && hit.collider.TryGetComponent(out block))
+            direction = hit.normal;
+
+        return block;
+    }
+    private void PlaceBlock(Vector3 position)
+    {
+        if (selectedBlock == null)
+            return;
+
+        GameObject newBlock = Instantiate(block_prefab, position, Quaternion.identity);
+        newBlock.GetComponent<MeshRenderer>().material = selectedBlock.Material;
+    }
+    private void DestroyBlock(Block blockToDestroy)
+    {
+        if (!blockToDestroy.gameObject.IsDestroying())
+            Destroy(blockToDestroy.gameObject);
     }
 }

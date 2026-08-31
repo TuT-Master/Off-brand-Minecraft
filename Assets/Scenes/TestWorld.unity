@@ -2821,6 +2821,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3058ea2d7de989b4c8d978e0eb7db853, type: 2}
     - target: {fileID: 8498514456136531504, guid: 0388cb1c05cd4384bba17c143f5bd3a4, type: 3}
+      propertyPath: block_prefab
+      value: 
+      objectReference: {fileID: 2847140054378094366, guid: a39e8388df8b1b845bade12553c71928, type: 3}
+    - target: {fileID: 8498514456136531504, guid: 0388cb1c05cd4384bba17c143f5bd3a4, type: 3}
+      propertyPath: blockInteractionRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498514456136531504, guid: 0388cb1c05cd4384bba17c143f5bd3a4, type: 3}
       propertyPath: toolbarItems.Array.size
       value: 4
       objectReference: {fileID: 0}

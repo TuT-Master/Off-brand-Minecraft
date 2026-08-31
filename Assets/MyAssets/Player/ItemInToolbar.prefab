@@ -304,3 +304,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToolbarItem
   Block: {fileID: 0}
   backgroundImage: {fileID: 7467897265182344698}
+  blockImage: {fileID: 8541331172075622566}

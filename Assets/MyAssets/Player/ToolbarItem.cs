@@ -5,6 +5,16 @@ public class ToolbarItem : MonoBehaviour
 {
     public BlockSO Block;
     [SerializeField] private Image backgroundImage;
+    [SerializeField] private Image blockImage;
+
+
+
+    // ----- START -----
+    private void Start()
+    {
+        blockImage.color = Block.Material.color;
+    }
+
 
     public void SetHighlight(bool toggle)
     {

@@ -16,7 +16,6 @@ public class Block : MonoBehaviour
     public float Health { get; private set; } = 1f;
     public Vector3 Position { get; private set; } = Vector3.zero;
 
-
     // References
     private MeshRenderer meshRenderer;
 
@@ -26,6 +25,8 @@ public class Block : MonoBehaviour
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        if (Position != transform.position)
+            Position = transform.position;
     }
     public void InitializeBlock(Vector3 position, float health, Material material)
     {
