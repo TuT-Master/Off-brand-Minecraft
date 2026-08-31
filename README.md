@@ -11,6 +11,7 @@ A little hobby project aimed at challenging my Unity and C# skills. Though it pr
 - Mouse camera
 - 4 block prefabs (grass, dirt, stone and snow)
 - Simple UI with crosshair and toolbar
+- Main menu with loading to Test Scene
 
 ## Planned Features
 
@@ -33,3 +34,5 @@ A little hobby project aimed at challenging my Unity and C# skills. Though it pr
 ![Falling into the void...](Docs/Game_2.png)
 
 ![Behind the scene](Docs/Unity_1.png)
+
+![Main Menu](Docs/MainMenu_1.png)
