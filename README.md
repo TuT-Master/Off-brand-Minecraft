@@ -29,9 +29,11 @@ A little hobby project aimed at challenging my Unity and C# skills. Though it pr
 
 ## How It Looks
 
-![Sky block off-brand edition](Docs/Game_1.png)
+![Block interaction](Docs/Game_3.mp4)
 
 ![Falling into the void...](Docs/Game_2.png)
+
+![Sky block off-brand edition](Docs/Game_1.png)
 
 ![Behind the scene](Docs/Unity_1.png)
 
