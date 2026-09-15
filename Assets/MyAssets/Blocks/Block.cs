@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer))]
@@ -11,37 +12,34 @@ public class Block : MonoBehaviour
         Stone,
         Snow,
     }
-
-    // Public fields
     public float Health { get; private set; } = 1f;
-    public Vector3 Position { get; private set; } = Vector3.zero;
-
-    // References
+    public Vector3Int WorldPosition { get; private set; } = Vector3Int.zero;
+    public Vector3Int ChunkPosition { get; private set; } = Vector3Int.zero;
     private MeshRenderer meshRenderer;
-
-
 
     // ----- INITIALIZATION -----
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        if (Position != transform.position)
-            Position = transform.position;
+        if (WorldPosition != transform.position)
+        {
+            WorldPosition = new((int)transform.position.x, (int)transform.position.y, (int)transform.position.z);
+        }
     }
-    public void InitializeBlock(Vector3 position, float health, Material material)
+    public void InitializeBlock(Vector3Int position, BlockSO blockSO)
     {
-        Position = position;
-        Health = health;
-        meshRenderer.material = material;
+        WorldPosition = position;
+        Health = blockSO.Health;
+        meshRenderer = meshRenderer != null ? meshRenderer : GetComponent<MeshRenderer>();
+        meshRenderer.material = blockSO.Material;
     }
-
-
-
-    // ----- RENDERING -----
-    public bool ShouldRender()
+    // ----- VISIBILITY -----
+    public void PlaceBlock()
     {
-        // Check all six sides if there are any neighbor block of type Air -> render
 
-        return true;
+    }
+    public void DestroyBlock()
+    {
+
     }
 }
