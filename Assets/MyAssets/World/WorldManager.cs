@@ -19,16 +19,20 @@ public class WorldManager : MonoBehaviour
     [SerializeField] private int chunkDimensions = 16;
     private Chunk[,] chunks;
     private VirtualBlock[,,] allVirtualBlocks;
+    [Header("References")]
+    [SerializeField] private Player player;
     [Header("Debug")]
     [SerializeField] private bool debug;
 
     // ----- START -----
     private void Start()
     {
-        GenerateStartingWorld();
+        GenerateStartingWorld(out Vector3Int centerPosition);
+        centerPosition.y += 1;
+        player.transform.position = centerPosition;
     }
     // ----- WORLD GENERATING -----
-    public void GenerateStartingWorld()
+    public void GenerateStartingWorld(out Vector3Int centerPosition)
     {
         chunks = new Chunk[startWorldSizeInChunks, startWorldSizeInChunks];
         // Create three-dimensional array for virtual blocks AND with pre-defined size
@@ -116,6 +120,21 @@ public class WorldManager : MonoBehaviour
                 }
             }
         }
+        // Assign centerPosition
+        Vector2Int centerPos2D = new(startWorldSizeInChunks * chunkDimensions / 2, startWorldSizeInChunks * chunkDimensions / 2);
+        centerPosition = new(centerPos2D.x, HeightAtWorldPosition(centerPos2D), centerPos2D.y);
+    }
+    public int HeightAtWorldPosition(Vector2Int position)
+    {
+        for (int height = 0; height < maxHeight; height++)
+        {
+            VirtualBlock virtualBlock = allVirtualBlocks[position.x, position.y, height];
+            if (virtualBlock.BlockType == Block.BlockType.Grass || virtualBlock.BlockType == Block.BlockType.Snow)
+            {
+                return virtualBlock.WorldPosition.z;
+            }
+        }
+        return -1;
     }
     private void InitializeVirtualBlocksInChunk(Chunk chunk)
     {
