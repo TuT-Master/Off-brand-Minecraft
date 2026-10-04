@@ -418,6 +418,14 @@ MonoBehaviour:
   jumpHeight: 5
   cameraTransform: {fileID: 5548738902042052584}
   mouseSensitivity: 0.25
+  block_prefab: {fileID: 2847140054378094366, guid: a39e8388df8b1b845bade12553c71928, type: 3}
+  toolbarItems:
+  - {fileID: 5773098611052494414}
+  - {fileID: 4340261551948867688}
+  - {fileID: 8454995582800270253}
+  - {fileID: 6033849986304933959}
+  blockInteractionRange: 5
+  wireframe: {fileID: 5677714607835785490, guid: 82649c6333cecb746b1caaf9411a5822, type: 3}
 --- !u!1 &6810499326291895478
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemInToolbar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+      propertyPath: Block
+      value: 
+      objectReference: {fileID: 11400000, guid: 3058ea2d7de989b4c8d978e0eb7db853, type: 2}
     - target: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -624,6 +636,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
   m_PrefabInstance: {fileID: 2250320016372345063}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8454995582800270253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+  m_PrefabInstance: {fileID: 2250320016372345063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6146f713ef22614e90fc3e17046bab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToolbarItem
 --- !u!1001 &4165857239496538893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -636,6 +659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemInToolbar (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+      propertyPath: Block
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cf6139f2b5e07641960680d496db257, type: 2}
     - target: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -726,6 +753,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
   m_PrefabInstance: {fileID: 4165857239496538893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6033849986304933959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+  m_PrefabInstance: {fileID: 4165857239496538893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6146f713ef22614e90fc3e17046bab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToolbarItem
 --- !u!1001 &4211632110140130564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,6 +776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemInToolbar
       objectReference: {fileID: 0}
+    - target: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+      propertyPath: Block
+      value: 
+      objectReference: {fileID: 11400000, guid: a0536f9eef79e6440955890dfb1d49e8, type: 2}
     - target: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -828,6 +870,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
   m_PrefabInstance: {fileID: 4211632110140130564}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5773098611052494414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+  m_PrefabInstance: {fileID: 4211632110140130564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6146f713ef22614e90fc3e17046bab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToolbarItem
 --- !u!1001 &6221484758009844514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -840,6 +893,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemInToolbar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+      propertyPath: Block
+      value: 
+      objectReference: {fileID: 11400000, guid: 31c368c975492d741ad8762922a7ee86, type: 2}
     - target: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -930,3 +987,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9078434636901073239, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
   m_PrefabInstance: {fileID: 6221484758009844514}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4340261551948867688 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7668666505556245322, guid: 1b3eada5bd88a2a44a7961f22595b1ec, type: 3}
+  m_PrefabInstance: {fileID: 6221484758009844514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6146f713ef22614e90fc3e17046bab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToolbarItem
