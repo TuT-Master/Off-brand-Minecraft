@@ -15,3 +15,4 @@ MonoBehaviour:
   blockName: Dirt
   blockHealth: 1
   blockMaterial: {fileID: 2100000, guid: f8855fe168d79da45b930c1096d5581a, type: 2}
+  blockType: 2
