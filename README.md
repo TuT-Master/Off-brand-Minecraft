@@ -36,15 +36,18 @@ A little hobby project aimed at challenging my Unity and C# skills. Though it pr
 - Block destruction
 - World generation (custom random-based algorithm)
 - Snow blocks on hills
+- Spawning player in center of generated world
+- Dynamically re-render blocks when their surroundings change (update visibility when you destroy block or place new)
 
 ## Planned Features
 
-- Spawning player in center of generated world
-- Dynamically re-render blocks when their surroundings change (update visibility when you destroy block or place new)
 - Chunk saving and loading
 - Block health points (destroying will take some time)
 
 ## Technical Challenges
+
+- ~~World generation (custom random-based algorithm)~~
+- ~~Dynamically re-render blocks when their surroundings change (update visibility when you destroy block or place new)~~
 
 ### Generating chunks with random heights
 Since I don't know how to use perlin noise for world generation I decided to create my own random-based algorithm for generating maps. The generation has two steps
@@ -65,5 +68,11 @@ Rendering all 16x16x128x9x9 (blocks in chunk * amount of chunk in my set up = 2 
 ![Sky block off-brand edition](Docs/Game_1.png)
 
 ![Behind the scene](Docs/Unity_1.png)
+
+![Home sweet home <3](Docs/Game_house.png)
+
+![Diggy diggy hole!](Docs/Game_mine.png)
+
+![Generated world](Docs/Unity_house_world.png)
 
 ![Main Menu](Docs/MainMenu_1.png)
