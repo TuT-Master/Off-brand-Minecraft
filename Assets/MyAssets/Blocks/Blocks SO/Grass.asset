@@ -15,3 +15,4 @@ MonoBehaviour:
   blockName: Grass
   blockHealth: 1.5
   blockMaterial: {fileID: 2100000, guid: dc9e1dc095f230049a0fa82c03b3f0cd, type: 2}
+  blockType: 1

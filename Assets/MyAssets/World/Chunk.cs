@@ -34,4 +34,5 @@ public struct VirtualBlock
     public Block.BlockType BlockType;
     public Vector3Int WorldPosition;
     public Vector3Int ChunkPosition;
+    public bool IsVisible;
 }

@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject wireframe;
     [SerializeField] private MeshRenderer wireframeMeshRenderer;
     private BlockSO selectedBlock = null;
+    [Header("World Manager")]
+    [SerializeField] private WorldManager worldManager;
     // Input actions
     private InputAction moveAction;
     private InputAction jumpAction;
@@ -29,7 +31,6 @@ public class Player : MonoBehaviour
     private InputAction toolbar4Action;
     private InputAction lmbAction;
     private InputAction rmbAction;
-
     // Input variables
     private Vector2 moveVector = Vector2.zero;
     private Vector2 lookVector = Vector2.zero;
@@ -86,11 +87,11 @@ public class Player : MonoBehaviour
             DisplayWireframe(pointedBlock.WorldPosition + direction, selectedBlock.Material);
             if (lmbAction.WasPressedThisFrame()) // LMB was pressed
             {
-                DestroyBlock(pointedBlock);
+                worldManager.DestroyBlock(pointedBlock);
             }
             else if (rmbAction.WasPressedThisFrame()) // RMB was pressed
             {
-                PlaceBlock(pointedBlock.WorldPosition + direction);
+                worldManager.PlaceBlock(selectedBlock, pointedBlock.WorldPosition + direction);
             }
         }
     }
@@ -160,23 +161,8 @@ public class Player : MonoBehaviour
         {
             direction = hit.normal;
         }
+        //Debug.Log($"Pointer block: {(block != null ? block.gameObject.name : "null")}");
         return block;
-    }
-    private void PlaceBlock(Vector3 position)
-    {
-        if (selectedBlock == null)
-        {
-            return;
-        }
-        GameObject newBlock = Instantiate(block_prefab, position, Quaternion.identity);
-        newBlock.GetComponent<MeshRenderer>().material = selectedBlock.Material;
-    }
-    private void DestroyBlock(Block blockToDestroy)
-    {
-        if (!blockToDestroy.gameObject.IsDestroying())
-        {
-            Destroy(blockToDestroy.gameObject);
-        }
     }
     private void DisplayWireframe(Vector3 position, Material material)
     {

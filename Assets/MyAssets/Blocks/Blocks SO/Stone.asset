@@ -15,3 +15,4 @@ MonoBehaviour:
   blockName: Stone
   blockHealth: 3
   blockMaterial: {fileID: 2100000, guid: 7ddf57bb4464fbb4f8284ba6dd37f33d, type: 2}
+  blockType: 3

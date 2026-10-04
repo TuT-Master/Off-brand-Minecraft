@@ -350,6 +350,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 176759954}
     - target: {fileID: 8498514456136531504, guid: 0388cb1c05cd4384bba17c143f5bd3a4, type: 3}
+      propertyPath: worldManager
+      value: 
+      objectReference: {fileID: 2143116853}
+    - target: {fileID: 8498514456136531504, guid: 0388cb1c05cd4384bba17c143f5bd3a4, type: 3}
       propertyPath: wireframeMeshRenderer
       value: 
       objectReference: {fileID: 176759955}
@@ -565,7 +569,7 @@ MonoBehaviour:
   dirtBlock: {fileID: 11400000, guid: a0536f9eef79e6440955890dfb1d49e8, type: 2}
   snowBlock: {fileID: 11400000, guid: 3058ea2d7de989b4c8d978e0eb7db853, type: 2}
   stoneBlock: {fileID: 11400000, guid: 8cf6139f2b5e07641960680d496db257, type: 2}
-  startWorldSizeInChunks: 15
+  startWorldSizeInChunks: 5
   maxHeight: 128
   maxHeightDifferenceBetweenNeighbourChunks: 4
   parentFolder: {fileID: 2134985557}

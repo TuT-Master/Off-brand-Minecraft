@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer))]
@@ -32,14 +31,5 @@ public class Block : MonoBehaviour
         Health = blockSO.Health;
         meshRenderer = meshRenderer != null ? meshRenderer : GetComponent<MeshRenderer>();
         meshRenderer.material = blockSO.Material;
-    }
-    // ----- VISIBILITY -----
-    public void PlaceBlock()
-    {
-
-    }
-    public void DestroyBlock()
-    {
-
     }
 }

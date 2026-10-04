@@ -15,3 +15,4 @@ MonoBehaviour:
   blockName: Snow
   blockHealth: 0.5
   blockMaterial: {fileID: 2100000, guid: b8c63fa1e7dd9534582a7e403286ecef, type: 2}
+  blockType: 4
